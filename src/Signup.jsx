@@ -17,9 +17,14 @@ export default function Signup() {
     e.preventDefault();
 
     try {
-      const res = await axios.post("http://localhost:5000/api/users/register", formData, {
-        headers: { "Content-Type": "application/json" },
-      });
+      const res = await axios.post(
+        "https://srv-d3ss2nh5pdvs73frnsh0.onrender.com/api/users/register",
+        formData,
+        {
+          headers: { "Content-Type": "application/json" },
+        }
+      );
+
       setMessage("User registered successfully ✅");
       console.log(res.data);
     } catch (error) {
@@ -31,7 +36,9 @@ export default function Signup() {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <div className="bg-white p-10 rounded-xl shadow-lg w-full max-w-md">
-        <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">Signup Form</h2>
+        <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">
+          Signup Form
+        </h2>
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <input
             name="username"
@@ -66,7 +73,9 @@ export default function Signup() {
             Register
           </button>
         </form>
-        {message && <p className="mt-4 text-center text-red-500 font-medium">{message}</p>}
+        {message && (
+          <p className="mt-4 text-center text-red-500 font-medium">{message}</p>
+        )}
       </div>
     </div>
   );
