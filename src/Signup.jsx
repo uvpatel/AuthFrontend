@@ -18,7 +18,7 @@ export default function Signup() {
 
     try {
       const res = await axios.post(
-        "https://srv-d3ss2nh5pdvs73frnsh0.onrender.com/api/users/register",
+        "https://authbackend-2-2jxy.onrender.com//users/register",
         formData,
         {
           headers: { "Content-Type": "application/json" },
